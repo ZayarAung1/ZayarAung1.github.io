@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+<body>
+    <h1>String Lesson</h1>
+    <script>
+        let firstname = "ZayarAung";
+        let lastname = "Gatsby";
+        console.log(firstname,lastname);
+        console.log(lastname.length);
+        
+        let fullname = firstname +' '+ lastname;
+        console.log(fullname);
+
+        console.log("My name is" + fullname);
+
+        document.write(firstname + '<br>');
+
+        document.write(firstname + '<b>' + lastname +'</b><br>');
+        
+        document.write(`${firstname} <b> ${lastname}</B><br>`);
+
+        document.write (`My name is ${fullname}. I am 29 years Old,<br>`)
+
+        document.write(firstname.toUpperCase()+'<br>');
+        document.write(firstname.toLowerCase()+'<br>');
+
+        document.write(fullname.substr(2,4) + '<br>')
+
+        let myjob = "      junior    developer     ";
+        
+        document.write(myjob.trim() + '<br>');
+
+        let ser = "javsscrip is funny";
+
+        document.write(ser.search('is') + '<br>');
+
+        let rep =" i want to visit mandalay";
+        document.write(rep.replace('mandalay','yangon'));
+
+        document.write('i\'m ZayarAung');
+        document.write("i'm zayarAung, i height 5'3\" ");
+        document.write(`i'm zayaraung. i height 5'3' `);
+        
+        
+
+    </script>
+    
+</body>
+</html>

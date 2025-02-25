@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+    <h1>Array Lesson</h1>
+
+    <script>
+        //array
+        let arr = [1,2,3];
+        console.log(arr[1]);
+        console.log(arr.length);///number of array length
+
+        let fruits = ['apple','orange','mango','strawberry'];
+        console.log(fruits.length);
+        console.log(fruits);
+        fruits.push('banana'); //Add data at lest
+        console.log(fruits);
+        
+        fruits.pop(''); // delect data at lest
+        console.log(fruits);
+        
+        
+        fruits.unshift('cherry'); //ADD data at first
+        console.log(fruits);
+
+        fruits.unshift('blueberry');
+        console.log(fruits);
+
+        fruits.shift(); // Delect data at first
+        console.log(fruits);
+
+        let students = ["Mg Mg","Aye Aye","Hla Hla","tun tun","Aung Aung"];
+        console.log(students);
+
+        //students.sort();
+        //console.log(students);
+
+        students.reverse();
+        console.log(students);
+
+        students.sort().reverse();
+        console.log(students);
+
+        let studentStr = students.toString();
+        console.log(studentStr);
+
+        let names = "hla hla,Mya Mya,Aung Aung,Tun Tun,Aye Aye";
+
+        let namelistarry = names.split(' ');
+        console.log(namelistarry);
+
+        let arr1 = [1,2,3,4];
+        let arr2 = [5,6,7];
+        let arr3 = [8,9,10];
+        
+        console.log(arr1);
+        console.log(arr2);
+
+        let arr4 = arr1.concat(arr2);
+        console.log(arr4);
+
+        let arr5 = ["...arr1,..arr2,....arr3"];
+        console.log(arr5);
+        
+        
+        
+        
+        
+        
+
+    </script>
+    
+</body>
+</html>
