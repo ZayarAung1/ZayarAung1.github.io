@@ -9,11 +9,36 @@
     <h1>Ali</h1>
 
     <script>
-        let b = Number (prompt(`Enter a Number`));
-          for (let a = 1; a <= 12; a++) {
-            document.write(`<p> ${b} x ${a} = ${b*a} </p>`);
-          }
+        // let b = Number (prompt(`Enter a Number`));
+        //   for (let a = 1; a <= 12; a++) {
+        //     document.write(`<p> ${b} x ${a} = ${b*a} </p>`);
+        //   }
+
+          for (let h=5; h >= 1; h--){
+            for(let m=0; m < h; m++){
+            document.write ("*");}
+
+            document.write("<br>");
+            }
+          
+            let a = parseInt(prompt("Enter your number:"));
+
+            if (!isNaN(a) && a > 0){
+            let d = 1;
+            let b = 0;
+
+            do {
+                b = a * d ;
+                document.write(`${a} x ${d} = ${b} <br>`);
+                d++ ;}
+             while(d < 13);
+                }
+            
+        
+            
+
     </script>
+
     
 </body>
 </html>
