@@ -1,34 +1,54 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
+    /* margin: 10px; */
     padding: 0;
     background-color: #f8f8f8;
     text-align: center;
 }
 
-header {
-    background: #ff4081;
-    color: white;
-    padding: 15px 0;
+.logo {
+    background-color: #333;
+}
+.img1 img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+.gift-bar {
+    background-color: #168787;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: auto;
+    margin: 10px 0px;
+    gap: 10px;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+.gift-title {
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
+select, button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+
+}
+
+
+
+.tit {
+    font-style: italic;
+    letter-spacing: 5px;
 }
 
 .hero {
-    background: url('../images/download.webp') no-repeat center center/cover;
+    background: url('../images/5f.webp') no-repeat center center/cover;
     color: white;
     padding: 100px 20px;
 }
@@ -38,16 +58,17 @@ nav ul li a {
 }
 
 .btn {
-    background: #ff4081;
+    background: #eb0377;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     display: inline-block;
     margin-top: 10px;
+    font-weight: bold;
 }
 
 #shop {
-    padding: 50px 20px;
+    padding: 20px 20px;
     background: white;
 }
 
@@ -75,5 +96,56 @@ footer {
     background: #333;
     color: white;
     padding: 15px 0;
-    margin-top: 20px;
+    margin-top: 10px;
+}
+.find {
+    color: #f8f8f8;
+    background-color: rgba(74, 74, 70, 0.947);
+}
+.menu ul{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    background-color: #168787;
+    align-items: center;
+    text-align: center;
+    width: 10px 10px;
+    height: 50px;
+    padding: 20px;
+    
+
+}
+.menu ul li{
+    background: rgb(155, 148, 148);
+    padding: 10px;
+    border-radius: 10px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    width: 150px;
+    text-align: center;
+    color: white;
+    gap: 10px;
+}
+.nav {
+    
+    /* display: flex; */
+    justify-content: start;
+    align-items: start;
+    max-width: auto;
+    margin: 10px 0px;
+    gap: 10px;
+}
+
+.dev { 
+    justify-self: start;
+    display: flex;
+    background-color: #333;
+
+    color: rgb(194, 174, 174);
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.dev a {
+    text-decoration: none;
+    color: #f8f8f8;
 }
