@@ -184,3 +184,19 @@ select, button {
     align-items: center;
     text-align: center;
 }
+.btn1:hover, .btna:hover{
+    background-color: #686363;
+    transform: scale(1.1);
+} 
+
+
+
+.icon1:hover{
+    transform: scale(1.5);
+}
+.box:hover {
+    transform: scale(1.1);
+}
+select:hover {
+    transform: scale(1.1);
+}

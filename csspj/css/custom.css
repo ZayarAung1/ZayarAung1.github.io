@@ -102,6 +102,10 @@ footer {
     color: #f8f8f8;
     background-color: rgba(74, 74, 70, 0.947);
 }
+.find:hover, .dev:hover, .btn:hover {
+    background-color: rgb(61, 61, 77);
+    transform: scale(1.1);
+}
 .menu ul{
     display: grid;
     grid-template-columns: repeat(3, auto);
