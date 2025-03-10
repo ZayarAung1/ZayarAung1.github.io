@@ -3,42 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomeWork</title>
+    <title>Digital Clock</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #282828;
+            color: white;
+            font-size: 2rem;
+        }
+        .clock {
+            border: 2px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .date {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .time {
+            font-size: 3rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>Ali</h1>
+    <div class="clock">
+        <div class="date" id="date">Loading date...</div>
+        <div class="time" id="time">Loading time...</div>
+    </div>
 
     <script>
-        // let b = Number (prompt(`Enter a Number`));
-        //   for (let a = 1; a <= 12; a++) {
-        //     document.write(`<p> ${b} x ${a} = ${b*a} </p>`);
-        //   }
+        function updateClock() {
+            const now = new Date();
 
-          for (let h=5; h >= 1; h--){
-            for(let m=0; m < h; m++){
-            document.write ("*");}
+            // Date
+            const days = ["Sunday", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            const months = ["January", "Febuary", "March", "aprial", "May", "June", "July", "Aguest", "September", "October", "November", "December"];
+            const dayName = days[now.getDay()];
+            const monthName = months[now.getMonth()];
+            const date = now.getDate();
+            const year = now.getFullYear();
+            const dateElement = document.getElementById('date');
+            dateElement.textContent =` ${dayName}, ${monthName} ${date}, ${year}`;
 
-            document.write("<br>");
-            }
-          
-            let a = parseInt(prompt("Enter your number:"));
+            // Time with AM/PM
+            let hours = now.getHours();
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12 || 12; // Convert to 12-hour format
+            const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+            const timeElement = document.getElementById('time');
+            timeElement.textContent = timeString;
+        }
 
-            if (!isNaN(a) && a > 0){
-            let d = 1;
-            let b = 0;
-
-            do {
-                b = a * d ;
-                document.write(`${a} x ${d} = ${b} <br>`);
-                d++ ;}
-             while(d < 13);
-                }
-            
-        
-            
-
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial call to display the clock immediately
     </script>
-
-    
 </body>
 </html>

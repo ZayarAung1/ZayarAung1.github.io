@@ -6,21 +6,49 @@
     <title>Dom</title>
 </head>
 <body>
-
-    <h1 class="myId">Dom <i>Selector</i></h1>
+    <h1 id="myId">Dom<i>Selector</i></h1>
+    <p class="myClass">Class Selector 1</p>
+    <p class="myClass">Class Selector 1</p>
+    <p class="myClass">Class Selector 1</p>
+    <p class="myClass">Class Selector 1</p>
+    <p class="myClass">Class Selector 1</p>
+    <p class="myClass">Class Selector 2</p>
     <button onclick="showData()">Click Me</button>
-
+     
     <script>
-        function showData(){
-
+        function showData() {
             // alert ('ok');
-
-            let myId = document.getElementById('myId')
+            // id selector
+            let myId = document.getElementById('myId');
             console.log(myId);
             console.log(myId.innerText);
-            console.log(myId.innerHTML);   
+            console.log(myId.innerHTML);
+            
+            myId.innerText = `Javascript is <i> So Funny! </i>`;
+            //Class selector
+            let myClass = document.getElementsByClassName('myClass');
+            console.log(myClass);
+            console.log(myClass[1]);
+            console.log(myClass[1].innerText);
+
+            //tag selector
+            let tagName = document.getElementsByTagName('p');
+            console.log(tagName);
+            console.log(tagName[0]);
+            console.log(tagName[0].innerText);
+
+            //query selector
+            let querySelector = document.querySelector('.myClass');
+            console.log(querySelector);
+
+            // query selector all
+            let querySelectorAll = document.querySelectorAll('.myClass');
+            console.log(querySelectorAll);
+            
+            
         }
     </script>
-    
+
+
 </body>
 </html>
