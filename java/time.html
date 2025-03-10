@@ -3,56 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Digital Clock</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #282828;
+            color: white;
+            font-size: 2rem;
+        }
+        .clock {
+            border: 2px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .date {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .time {
+            font-size: 3rem;
+        }
+    </style>
 </head>
 <body>
-    <div id="clock"></div>
+    <div class="clock">
+        <div class="date" id="date">Loading date...</div>
+        <div class="time" id="time">Loading time...</div>
+    </div>
 
     <script>
-        
-        
         function updateClock() {
-            let now = new Date();
+            const now = new Date();
 
-            // Day of the week
-            let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-            let dayName = days[now.getDay()];
+            // Date
+            const days = ["Sunday", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            const months = ["January", "Febuary", "March", "aprial", "May", "June", "July", "Aguest", "September", "October", "November", "December"];
+            const dayName = days[now.getDay()];
+            const monthName = months[now.getMonth()];
+            const date = now.getDate();
+            const year = now.getFullYear();
+            const dateElement = document.getElementById('date');
+            dateElement.textContent =` ${dayName}, ${monthName} ${date}, ${year}`;
 
-            // Date (DD/MM/YYYY)
-            let day = now.getDate();
-            let month = now.getMonth() + 1; // Months are 0-indexed
-            let year = now.getFullYear();
-
-            // Add leading zeros for single digits
-            day = day < 10 ? '0' + day : day;
-            month = month < 10 ? '0' + month : month;
-
-            let formattedDate = `${day}/${month}/${year}`;
-
-            // Time
+            // Time with AM/PM
             let hours = now.getHours();
-            let minutes = now.getMinutes();
-            let seconds = now.getSeconds();
-            let ampm = hours >= 12 ? 'PM' : 'AM';
-
-            // Convert to 12-hour format
-            hours = hours % 12 || 12;
-
-            // Add leading zeros
-            minutes = minutes < 10 ? '0' + minutes : minutes;
-            seconds = seconds < 10 ? '0' + seconds : seconds;
-
-            let formattedTime = `${hours}:${minutes}:${seconds} ${ampm}`;
-
-            // Display day, date, and time
-            document.getElementById('day').innerHTML = dayName;
-            document.getElementById('date').innerHTML = formattedDate;
-            document.getElementById('clock').innerHTML = formattedTime;
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12 || 12; // Convert to 12-hour format
+            const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+            const timeElement = document.getElementById('time');
+            timeElement.textContent = timeString;
         }
 
         setInterval(updateClock, 1000);
-        updateClock(); // Call once to prevent delay
-    
+        updateClock(); // Initial call to display the clock immediately
     </script>
 </body>
 </html>
