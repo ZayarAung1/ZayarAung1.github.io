@@ -3,30 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Digital Clock</title>
     <style>
-    body{
-        
-            justify-content: center;
-        
-            height: 100vh;
-            
-            color: black;
-            font-size: 2rem;
-        }
-        .clock {
-            border: 2px;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
-        .date {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        .time {
-            font-size: 3rem;
-        }
+   
     </style>
 </head>
 <body>
@@ -42,23 +22,23 @@
             const now = new Date();
 
             // Date
-            const days = ["Sunday", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-            const months = ["January", "Febuary", "March", "aprial", "May", "June", "July", "Aguest", "September", "October", "November", "December"];
-            const dayName = days[now.getDay()];
-            const monthName = months[now.getMonth()];
-            const date = now.getDate();
-            const year = now.getFullYear();
-            const dateElement = document.getElementById('date');
+            let days = ["Sunday", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            let months = ["January", "Febuary", "March", "aprial", "May", "June", "July", "Aguest", "September", "October", "November", "December"];
+            let dayName = days[now.getDay()];
+            let monthName = months[now.getMonth()];
+            let date = now.getDate();
+            let year = now.getFullYear();
+            let dateElement = document.getElementById('date');
             dateElement.textContent =` ${dayName}, ${monthName} ${date}, ${year}`;
 
             // Time
             let hours = now.getHours();
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            const ampm = hours >= 12 ? 'PM' : 'AM';
+            let minutes = String(now.getMinutes()).padStart(2, '0');
+            let seconds = String(now.getSeconds()).padStart(2, '0');
+            let ampm = hours >= 12 ? 'PM' : 'AM';
             hours = hours % 12 || 12; // Convert to 12-hour format
-            const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
-            const timeElement = document.getElementById('time');
+            let timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+            let timeElement = document.getElementById('time');
             timeElement.textContent = timeString;
         }
 
